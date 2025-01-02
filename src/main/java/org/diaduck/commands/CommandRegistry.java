@@ -1,5 +1,7 @@
 package org.diaduck.commands;
 
+import org.diaduck.HelpCommand;
+
 import java.util.HashMap;
 import java.util.Map;
 
