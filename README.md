@@ -1,4 +1,4 @@
-# DiaBot!\
+# DiaBot!
 \
 At the root of this project is a file called `config.properties`\
 If you are taking from this project, you MUST MAKE THIS FILE.\
