@@ -10,15 +10,13 @@ repositories {
 }
 
 dependencies {
+    implementation("net.dv8tion:JDA:5.2.2") {
+        // Optionally disable audio natives to reduce jar size by excluding `opus-java`
+        exclude(module = "opus-java")
+    }
+    implementation("ch.qos.logback:logback-classic:1.4.11") // Correct placement for logback
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
-    implementation("net.dv8tion:JDA:5.2.2") { // replace $version with the latest version
-        // Optionally disable audio natives to reduce jar size by excluding `opus-java`
-        // Gradle DSL:
-        // exclude module: 'opus-java'
-        // Kotlin DSL:
-        // exclude(module="opus-java")
-    }
 }
 
 tasks.test {

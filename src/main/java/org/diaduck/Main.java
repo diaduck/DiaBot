@@ -15,6 +15,8 @@ public class Main extends ListenerAdapter {
             // Get token from environment variable
             String token = BotConfig.getToken();
 
+            // System.out.println("Using token: " + token);  // Print it out
+
             // Initialize JDA with necessary intents
             JDA jda = JDABuilder.createDefault(token)
                     .enableIntents(
