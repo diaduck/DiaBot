@@ -6,15 +6,15 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 //import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Role;
-import xyz.diaduck.selfroles.ReactionRoleEmbed;
+import xyz.diaduck.selfroles.ReactionRoleEmbedCommand;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class SlashCommandListener extends ListenerAdapter {
-    private final ReactionRoleEmbed embedCreator;
+    private final ReactionRoleEmbedCommand embedCreator;
 
-    public SlashCommandListener(ReactionRoleEmbed embedCreator) {
+    public SlashCommandListener(ReactionRoleEmbedCommand embedCreator) {
         this.embedCreator = embedCreator;
     }
 

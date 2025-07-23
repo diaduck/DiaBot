@@ -1,5 +1,6 @@
 package xyz.diaduck.commands;
 
+import xyz.diaduck.commands.cmds.CreateEmbedHereCommand;
 import xyz.diaduck.commands.cmds.HelloCommand;
 import xyz.diaduck.commands.cmds.PingCommand;
 
@@ -12,6 +13,7 @@ public class CommandRegistry {
     static {
         registerCommand("ping", new PingCommand());
         registerCommand("hello", new HelloCommand());
+        registerCommand("embedhere", new CreateEmbedHereCommand());
         //registerCommand("help", new HelpCommand());
     }
 

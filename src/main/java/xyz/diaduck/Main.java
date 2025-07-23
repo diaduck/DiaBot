@@ -14,6 +14,7 @@ import xyz.diaduck.commands.CommandListener;
 import xyz.diaduck.commands.CommandRegistry;
 import xyz.diaduck.commands.SlashCommandListener;
 import xyz.diaduck.selfroles.ReactionRoleListener;
+import xyz.diaduck.selfroles.Roles;
 import xyz.diaduck.welcome.WelcomeListener;
 
 public class Main extends ListenerAdapter {
@@ -40,6 +41,7 @@ public class Main extends ListenerAdapter {
 
             jda.awaitReady();
             Channels.initChannels(jda);
+            Roles.initRoles(jda);
             System.out.println("Bot is ready and online!");
 
 

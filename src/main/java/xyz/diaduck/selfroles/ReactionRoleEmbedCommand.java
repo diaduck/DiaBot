@@ -12,11 +12,11 @@ import java.awt.Color;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class ReactionRoleEmbed {
+public class ReactionRoleEmbedCommand {
 
     private final ReactionRoleListener reactionRoleListener;
 
-    public ReactionRoleEmbed(ReactionRoleListener reactionRoleListener) {
+    public ReactionRoleEmbedCommand(ReactionRoleListener reactionRoleListener) {
         this.reactionRoleListener = reactionRoleListener;
     }
 
