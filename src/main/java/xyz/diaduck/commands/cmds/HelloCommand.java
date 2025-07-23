@@ -1,6 +1,7 @@
-package org.diaduck.commands;
+package xyz.diaduck.commands.cmds;
 
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import xyz.diaduck.commands.Command;
 
 public class HelloCommand implements Command {
     @Override

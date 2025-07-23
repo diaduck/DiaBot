@@ -1,4 +1,4 @@
-package org.diaduck;
+package xyz.diaduck;
 
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -6,8 +6,10 @@ import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
-import org.diaduck.commands.Command;
-import org.diaduck.commands.CommandRegistry;
+import xyz.diaduck.commands.Command;
+import xyz.diaduck.commands.CommandListener;
+import xyz.diaduck.commands.CommandRegistry;
+import xyz.diaduck.welcome.WelcomeListener;
 
 public class Main extends ListenerAdapter {
     public static void main(String[] args) {
@@ -24,32 +26,16 @@ public class Main extends ListenerAdapter {
                             GatewayIntent.GUILD_MESSAGES,
                             GatewayIntent.GUILD_MEMBERS
                     )
-                    .addEventListeners(new Main())
+                    .addEventListeners(new CommandListener())
+                    .addEventListeners(new WelcomeListener())
                     .build();
 
             jda.awaitReady();
+            Channels.initChannels(jda);
             System.out.println("Bot is ready and online!");
 
         } catch (Exception e) {
             e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void onMessageReceived(MessageReceivedEvent event) {
-        if (event.getAuthor().isBot()) return;
-
-        String message = event.getMessage().getContentRaw();
-
-        if (message.startsWith(BotConfig.getPrefix())) {
-            String commandKey = message.substring(BotConfig.getPrefix().length()).split(" ")[0].toLowerCase();
-            Command command = CommandRegistry.getCommand(commandKey);
-
-            if (command != null) {
-                command.execute(event);
-            } else {
-                event.getChannel().sendMessage("Unknown command. Use " + BotConfig.getPrefix() + "help to see available commands.").queue();
-            }
         }
     }
 }

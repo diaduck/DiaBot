@@ -1,6 +1,7 @@
-package org.diaduck.commands;
+package xyz.diaduck.commands;
 
-import org.diaduck.HelpCommand;
+import xyz.diaduck.commands.cmds.HelloCommand;
+import xyz.diaduck.commands.cmds.PingCommand;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +12,7 @@ public class CommandRegistry {
     static {
         registerCommand("ping", new PingCommand());
         registerCommand("hello", new HelloCommand());
-        registerCommand("help", new HelpCommand());
+        //registerCommand("help", new HelpCommand());
     }
 
     public static void registerCommand(String name, Command command) {

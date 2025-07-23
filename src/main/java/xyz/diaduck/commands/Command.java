@@ -1,4 +1,4 @@
-package org.diaduck.commands;
+package xyz.diaduck.commands;
 
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
