@@ -12,6 +12,7 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import xyz.diaduck.commands.Command;
 import xyz.diaduck.commands.CommandListener;
 import xyz.diaduck.commands.CommandRegistry;
+import xyz.diaduck.commands.SlashCommandListener;
 import xyz.diaduck.selfroles.ReactionRoleListener;
 import xyz.diaduck.welcome.WelcomeListener;
 
@@ -22,6 +23,7 @@ public class Main extends ListenerAdapter {
             String token = BotConfig.getToken();
 
             // System.out.println("Using token: " + token);  // Print it out
+
 
             // Initialize JDA with necessary intents
             JDA jda = JDABuilder.createDefault(token)
@@ -48,7 +50,8 @@ public class Main extends ListenerAdapter {
                                     new OptionData(OptionType.STRING, "message_id", "The message ID to add reaction role to", true),
                                     new OptionData(OptionType.STRING, "emoji", "The emoji to react with", true),
                                     new OptionData(OptionType.ROLE, "role", "The role to assign", true)
-                            )
+                            ),
+                    Commands.slash("createreactionrolesembed", "Creates a reaction role embed with predefined emojis and roles")
             ).queue();
 
         } catch (Exception e) {
